@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <stdbool.h>
-
+// This code dynamically detects regions and extracts vehicles of varying sizes. 
 // Helper function to check if a pixel is part of a vehicle (e.g., based on color or brightness)
 bool isVehiclePixel(Uint32 pixel, SDL_PixelFormat* format) {
     Uint8 r, g, b, a;
