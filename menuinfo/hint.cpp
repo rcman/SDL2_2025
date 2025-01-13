@@ -5,7 +5,7 @@ int main()
         SDL_Window * win = SDL_CreateWindow("Tablet Events", 400, 400, SDL_WINDOW_RESIZABLE);
         SDL_Renderer * screen = SDL_CreateRenderer(win, 0, 0);
 
-        SDL_SetHint("SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH", "1");
+        SDL_SetHint(SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH, "1");
 
         bool run = true;
         while(run)
