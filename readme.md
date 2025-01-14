@@ -1,1 +1,13 @@
 # SDL2 Code for the 2025 Year. Will update all my new ideas here.
+![strip1](https://github.com/user-attachments/assets/1e520376-35ae-423b-a8c2-9300745a7334)
+![strip2](https://github.com/user-attachments/assets/ccc44794-ebf7-4a5d-999b-5d72e3119612)
+![strip3](https://github.com/user-attachments/assets/73303ad5-48d6-4582-a3c7-c43207d27856)
+![strip4](https://github.com/user-attachments/assets/3bf42ef4-07b0-4f5c-8c8a-6762d3861a1d)
+![strip5](https://github.com/user-attachments/assets/2dfe01fe-e97c-4a1a-9936-8166a8eb079d)
+![strip6](https://github.com/user-attachments/assets/e20cc9b5-0cc9-4920-9a69-f8fbb66860ce)
+![strip7](https://github.com/user-attachments/assets/91b5e623-1d67-47f7-9e62-206a51cc0b71)
+![strip8](https://github.com/user-attachments/assets/6dbc302b-9a4a-4b5e-a7c5-ce7278f350f3)
+![strip9](https://github.com/user-attachments/assets/e68879a3-482a-40b1-8ac3-9ea654c5571f)
+![strip10](https://github.com/user-attachments/assets/4c806fc1-0886-472a-9cc3-118eea4b2c51)
+![strip11](https://github.com/user-attachments/assets/82d9c278-91ca-4af7-a5b4-c0605b1aac44)
+![tank](https://github.com/user-attachments/assets/1c75092d-504b-40de-afcd-1d81312da17e)
