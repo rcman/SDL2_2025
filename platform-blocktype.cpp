@@ -177,4 +177,12 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+/*
+### Adding More Block Types:
+If you want to add more block types (e.g., blocks with different behaviors), you can extend the `map.txt` format and modify the collision logic. For example:
+- Use `2` for slippery blocks.
+- Use `3` for deadly blocks.
+
+Then, update the `Player::update` function to handle these new block types.
+*/
 
