@@ -1,0 +1,3 @@
+/home/franco/Projects/sdl3/newstart/build/CMakeFiles/newstart.dir
+/home/franco/Projects/sdl3/newstart/build/CMakeFiles/edit_cache.dir
+/home/franco/Projects/sdl3/newstart/build/CMakeFiles/rebuild_cache.dir
