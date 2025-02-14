@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,6 +33,7 @@ struct animshape {
 SDL_Window *window = NULL;
 SDL_Renderer *renderer = NULL;
 SDL_Texture *texture = NULL;
+int currentShape = 0;
 
 void cleanup() {
     if (texture) SDL_DestroyTexture(texture);
@@ -58,16 +60,29 @@ int initSDL() {
     return 1;
 }
 
-void drawShape(int rw, int sp) {
+void drawShape(int rw) {
     int i, j;
-    for (i = 0; i < 16; i++) {
-        for (j = 0; j < 16; j++) {
-            if (animobjects[rw].fshp[sp]->shp[i * 16 + j]) {
-                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                SDL_RenderDrawPoint(renderer, animobjects[rw].animx + j, animobjects[rw].animy + i);
+    for (int sp = 0; sp < TOTALSHAPE; sp++) {
+        for (i = 0; i < 16; i++) {
+            for (j = 0; j < 16; j++) {
+                if (animobjects[rw].fshp[sp]->shp[i * 16 + j]) {
+                    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+                    SDL_RenderDrawPoint(renderer, j + sp * 20, i);
+                }
             }
         }
     }
+}
+
+void saveSpriteSheet() {
+    SDL_Surface *surface = SDL_CreateRGBSurface(0, TOTALSHAPE * 20, 16, 32, 0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF);
+    if (!surface) {
+        printf("Failed to create surface: %s\n", SDL_GetError());
+        return;
+    }
+    SDL_RenderReadPixels(renderer, NULL, surface->format->format, surface->pixels, surface->pitch);
+    IMG_SavePNG(surface, "spritesheet.png");
+    SDL_FreeSurface(surface);
 }
 
 int fileRead(const char *filename) {
@@ -98,12 +113,24 @@ int main(int argc, char *argv[]) {
         while (SDL_PollEvent(&e) != 0) {
             if (e.type == SDL_QUIT) {
                 running = 0;
+            } else if (e.type == SDL_KEYDOWN) {
+                switch (e.key.keysym.sym) {
+                    case SDLK_LEFT:
+                        if (currentShape > 0) currentShape--;
+                        break;
+                    case SDLK_RIGHT:
+                        if (currentShape < TOTALSHAPE - 1) currentShape++;
+                        break;
+                    case SDLK_s:
+                        saveSpriteSheet();
+                        break;
+                }
             }
         }
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         
-        drawShape(0, 0); // Example call
+        drawShape(currentShape);
         
         SDL_RenderPresent(renderer);
         SDL_Delay(16);
